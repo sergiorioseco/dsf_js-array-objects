@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "hero-section"
+    "filters"
+    "products";
+}
+
+.hero-section {
+  grid-area: hero-section;
+  background-image: url(../img/banner.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: end;
+  color: white;
+  padding-left: 15px;
+}
+
+.filters {
+  background-color: #a3cef1;
+  grid-area: filters;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  justify-content: start;
+  align-items: start;
+}
+
+.filters p {
+  margin: 0;
+}
+
+.filters-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+input {
+  width: 100%;
+}
+
+.m2-selector {
+  display: flex;
+  gap: 5px;
+  max-width: 100%;
+}
+
+.products {
+  background-color: #6096ba;
+  grid-area: products;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  overflow: auto;
+  padding: 6px;
+  max-width: 100%;
+}
+
+.products .card {
+  background-color: #274c77;
+  color: white;
+}
+
+.no-results {
+  color: white;
+  text-align: start;
+  font-weight: bold;
+}
+
+@media (min-width: 576px) {
+  body {
+    grid-template-columns: 15vw 85vw;
+    grid-template-rows: 25vh 75vh;
+    grid-template-areas:
+      "hero-section hero-section"
+      "filters products";
+    height: 100vh;
+  }
+  .hero-section {
+    font-size: xx-large;
+  }
+  .products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+    padding: 20px;
+  }
+}
